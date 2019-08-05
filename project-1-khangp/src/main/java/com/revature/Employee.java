@@ -37,18 +37,12 @@ public class Employee extends HttpServlet {
 		HttpSession session = request.getSession(false);
 		String commandType = request.getParameter("command");
 		String methodName = request.getParameter("methodname");
-		String userTypeTry = (String) session.getAttribute("userType");
-		System.out.println(userTypeTry);
 		String userType = (String) session.getAttribute("userType");
+		//System.out.println(methodName);
 		if (userType.equals("employee")) {
 			if (methodName != null) {
 				if (methodName.equals("loademp")) {
-					String userName = (String) session.getAttribute("username");
-					User user = getUser(userName);	
-					System.out.println(user.getFirstName());
-					response.setContentType("text/html");
-					response.getWriter().write(generateUserJson(user));
-					System.out.println("Hello");
+					displayEmployeeInfo(session, response);
 				} else if (methodName.equals("loadAllReim")) {
 					System.out.println("Hello");
 					displayUserReim(session, response);
