@@ -42,7 +42,7 @@ public class UserDao implements Dao<User>{
 		User user = null;
 
 		try { 
-			PreparedStatement pStatement = connection.prepareStatement("select * from users where username = ?");
+			PreparedStatement pStatement = connection.prepareStatement("select * from Users where username = ?");
 			pStatement.setString(1, username);
 			ResultSet resultSet = pStatement.executeQuery();
 			while(resultSet.next()) {
@@ -64,7 +64,7 @@ public class UserDao implements Dao<User>{
 		User user = null;
 
 		try { 
-			PreparedStatement pStatement = connection.prepareStatement("select * from users where username = ? and password = ?");
+			PreparedStatement pStatement = connection.prepareStatement("select * from Users where username = ? and password = ?");
 			pStatement.setString(1, username);
 			pStatement.setString(2, password);
 			ResultSet resultSet = pStatement.executeQuery();
