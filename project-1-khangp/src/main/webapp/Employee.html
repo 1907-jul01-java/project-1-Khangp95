@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Employee</title>
+</head>
+<body>
+<h1>Employee</h1>
+
+<div class="container">
+<button onClick="Load()">View Personal Info</button>
+<div id="employeeInfo"></div>
+</div>
+
+<form action="Employee" method="Post">
+<button onClick="getReimbursementTable()">View Reimbursement List</button>
+</form> 
+
+<div class="container" >
+		<button onClick="getReimbursementTable()">View Reimbursement List</button>
+		<table class="table table-hover table-striped table-bordered" id="Reimbursements"></table>
+</div>
+
+
+<form action="Employee" method="Post">
+       <fieldset>
+       <label for="firstName">First Name: </label> <input type="text" name="firstname" size="20"/><br>
+       <label for="lastName">Last Name: </label><input type="text" name="lastname" size="20"/><br>
+       <label>reimbursementType: </label><input type="text" name="reimbursementType" size="20"/><br>
+       <label>cost: </label><input type="text" name="cost" size="20"/><br>
+       <button onClick="newReimb()">Submit New Reimbursement Request </button>
+       </fieldset>
+ </form>
+ 
+	<form action="Employee" method="POST">
+		<input type="hidden" name="command" value="LOGOUT" /> <input
+		class="header-button" style="width: 100%" type="submit"
+		value="Logout" />
+	</form>
+	
+<script src="employee.js"></script>
+</body>
+</html>
