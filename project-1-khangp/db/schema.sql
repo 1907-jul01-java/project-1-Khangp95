@@ -1,4 +1,4 @@
-drop table if exists Employees;
+drop table if exists Users;
 drop table if exists Reimbursments;
 
 create table Users(
